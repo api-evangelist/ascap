@@ -1,23 +1,76 @@
 aid: ascap
+
 name: ASCAP
-description: 'ASCAP is a company surfaced via the API Evangelist harvest backlog (source: music) and added
-  to the network as a stub for full-pipeline profiling.'
+
+image: https://www.ascap.com/~/media/site-pages/shared-images/ascap-logo-white-blue.svg
+
+description: 'The American Society of Composers, Authors and Publishers (ASCAP) is a not‑for‑profit performance‑rights organization representing over 1.1 million songwriters, composers and music publishers. It licenses public performances of music, collects royalties, and distributes them to creators. ASCAP also advocates for creators’ rights, offers educational resources, and provides tools such as a repertory search, licensing portals, and support services for members and music users.'
+
 url: https://raw.githubusercontent.com/api-evangelist/ascap/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:music
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-23'
+
 modified: '2026-09-23'
+
 tags:
-- Company
-apis: []
+- Music
+- Licensing
+- Royalties
+- Nonprofit
+- Creators
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: WellKnown
+  url: well-known/ascap-well-known.yml
+- type: Hosts
+  url: hosts/ascap-hosts.yml
+- type: TermsOfService
+  url: https://www.ascap.com/help/legal/terms-of-use
+- type: Support
+  url: https://www.ascap.com:443/help
+- type: PrivacyPolicy
+  url: https://www.ascap.com/help/legal/privacy-policy
+- type: Pricing
+  url: https://www.ascap.com/news-events/Events/2025/Sundance/composer-spotlight-bios/Price_Steven
+- type: Newsroom
+  url: https://www.ascap.com:443/press
+- type: Login
+  url: https://licensingcustomerportal.ascap.com/s/login/
+- type: Leadership
+  url: https://www.ascap.com:443/about-us/team
+- type: DomainSecurity
+  url: security/ascap-domain-security.yml
 - type: Website
   url: https://ascap.com/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: "Attempts to fetch OpenAPI spec at https://api.ascap.com/openapi.json returned no response, indicating no publicly available machine‑readable API contract."
+  evidence:
+    - url: https://api.ascap.com/openapi.json
+      status: 0
+  checked: 2026-09-23
+x-enrichment:
+  date: '2026-09-23'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

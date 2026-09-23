@@ -1,0 +1,71 @@
+generated: '2026-09-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 4
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - identity
+  - marketing
+  - support
+  - website
+hosts:
+- host: api.ascap.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: ascap.com
+  role: api
+  relation: own
+- host: ascap.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: ascap.com
+  role: website
+  relation: own
+- host: licensingcustomerportal.ascap.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - Login
+  serves: []
+  registrable_domain: ascap.com
+  role: identity
+  relation: own
+- host: www.ascap.com
+  found_by:
+  - pointer
+  types:
+  - TermsOfService
+  - PrivacyPolicy
+  - Pricing
+  serves: []
+  registrable_domain: ascap.com
+  role: marketing
+  relation: own
+- host: www.ascap.com:443
+  found_by:
+  - pointer
+  types:
+  - Support
+  - Newsroom
+  - Leadership
+  serves: []
+  registrable_domain: ascap.com:443
+  role: support
+  relation: other-domain
